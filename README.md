@@ -24,4 +24,3 @@ Este projeto consiste em um simples formulário HTML que coleta o nome e sobreno
 Sinta-se à vontade para expandir e personalizar conforme necessário.
 
 ### Pendencias: estilo
-# formPHP
