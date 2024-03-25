@@ -17,6 +17,26 @@
             $s = $_GET["sobrenome"];
 
             echo "<p>É um prazer te conhecer, $n $s! Este é o meu site</p>";
+
+            $url = 'http://172.18.0.1:3000/api/usuarios';
+
+            // Faz a solicitação GET para a URL especificada
+            $response = file_get_contents($url);
+            $data = json_decode($response, true);
+               
+            foreach ($data as $key => $value) {
+                if (is_array($value)) {
+                    // Se o valor for outro array, faz um segundo loop para exibir seus elementos
+                    echo "Chave: $key<br>";
+                    foreach ($value as $subKey => $subValue) {
+                        echo "Subchave: $subKey, Subvalor: $subValue<br>";
+                    }
+                } else {
+                    // Se o valor for uma string ou outro tipo, exibe normalmente
+                    echo "Chave: $key, Valor: $value<br>";
+                }
+            }
+            
         ?>
 
 
